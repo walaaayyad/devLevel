@@ -1,0 +1,6 @@
+{
+  "name": "DevLevel — Front-End Skills Assessment Platform",
+  "description": "Interactive skills assessment platform for front-end developers with progressive HTML, CSS, and JavaScript quizzes, immediate feedback, and personalized learning reports.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

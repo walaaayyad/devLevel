@@ -1,0 +1,87 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --color-dev-bg: #090B12;
+  --color-dev-card: #151B2B;
+  --color-dev-surface: #111522;
+  --color-neon-cyan: #00F5FF;
+  --color-neon-purple: #9B5CFF;
+  --color-neon-green: #B6FF5C;
+  --color-correct: #35E69B;
+  --color-incorrect: #FF5577;
+  --color-text-main: #F5F7FF;
+  --color-text-muted: #9AA4B8;
+}
+
+@layer base {
+  body {
+    background-color: #090B12;
+    color: #F5F7FF;
+    font-family: var(--font-sans);
+  }
+  
+  code, pre, kbd {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Custom glow and backdrop effects */
+.glow-cyan {
+  box-shadow: 0 0 25px -5px rgba(0, 245, 255, 0.25);
+}
+
+.glow-purple {
+  box-shadow: 0 0 25px -5px rgba(155, 92, 255, 0.25);
+}
+
+.glow-green {
+  box-shadow: 0 0 25px -5px rgba(182, 255, 92, 0.25);
+}
+
+.glass-card {
+  background: #151B2B;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  border-color: rgba(0, 245, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Code block highlight styling */
+.code-token-keyword { color: #9B5CFF; font-weight: 600; }
+.code-token-tag { color: #00F5FF; font-weight: 600; }
+.code-token-attr { color: #B6FF5C; }
+.code-token-string { color: #35E69B; }
+.code-token-comment { color: #64748b; font-style: italic; }
+.code-token-func { color: #38bdf8; }
+
+/* Print styling for final assessment export */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  
+  header, nav, .no-print, button:not(.print-include) {
+    display: none !important;
+  }
+  
+  .glass-card {
+    background: #ffffff !important;
+    border: 1px solid #cbd5e1 !important;
+    box-shadow: none !important;
+    color: #0f172a !important;
+  }
+  
+  .print-clean {
+    color: #0f172a !important;
+  }
+}
